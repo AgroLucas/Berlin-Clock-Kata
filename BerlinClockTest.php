@@ -16,13 +16,8 @@ class BerlinClockTest extends TestCase {
 
     public function test_convert_given00H01M00S_shouldReturnFirstMinuteLightYellow() {
 
-        $expected = array(
-        array(""),
-        array("", "", "", ""),
-        array("", "", "", ""),
-        array("", "", "", "", "", "", "", "", "", "", ""),
-        array("J", "", "", "")
-        );
+        $expected = BerlinClock::emptyClock();
+        $expected[4][0]="J";
 
         $actual = $this->berlinClock->convert(0, 1, 0);
 
