@@ -26,7 +26,7 @@ class BerlinClockTest extends TestCase {
 
     public function test_convert_given00H01M00S_shouldReturnFirstMinuteLightYellow() {
         $expected = BerlinClock::emptyClock();
-        $expected[4][0]="J";
+        $expected[4][0]="Y";
 
         $actual = $this->berlinClock->convert(0, 1, 0);
 
@@ -35,8 +35,8 @@ class BerlinClockTest extends TestCase {
 
     public function test_convert_given00H02M00S_shouldReturn1And2MinuteLightsYellow() {
         $expected = BerlinClock::emptyClock();
-        $expected[4][0]="J";
-        $expected[4][1]="J";
+        $expected[4][0]="Y";
+        $expected[4][1]="Y";
 
         $actual = $this->berlinClock->convert(0, 2, 0);
 
@@ -45,9 +45,9 @@ class BerlinClockTest extends TestCase {
 
     public function test_convert_given00H03M00S_shouldReturn1And2And3MinuteLightsYellow() {
         $expected = BerlinClock::emptyClock();
-        $expected[4][0]="J";
-        $expected[4][1]="J";
-        $expected[4][2]="J";
+        $expected[4][0]="Y";
+        $expected[4][1]="Y";
+        $expected[4][2]="Y";
 
         $actual = $this->berlinClock->convert(0,3,0);
 
@@ -58,7 +58,7 @@ class BerlinClockTest extends TestCase {
 
     public function test_convert_given00H05M00S_shouldReturnFirstFiveMinutesLightYellow() {
         $expected = BerlinClock::emptyClock();
-        $expected[3][0]="J";
+        $expected[3][0]="Y";
 
         $actual = $this->berlinClock->convert(0, 5, 0);
 
@@ -67,8 +67,8 @@ class BerlinClockTest extends TestCase {
 
     public function test_convert_given00H06M00S_shouldReturnFirstFiveMinutesAndFirstSingleMinuteLightsYellow() {
         $expected = BerlinClock::emptyClock();
-        $expected[3][0]="J";
-        $expected[4][0]="J";
+        $expected[3][0]="Y";
+        $expected[4][0]="Y";
 
         $actual = $this->berlinClock->convert(0,6,0);
 
@@ -77,9 +77,9 @@ class BerlinClockTest extends TestCase {
 
     public function test_convert_given00H07M00S_shouldReturnFirstFiveMinutesAnd1And2SingleMinuteLightsYellow() {
         $expected = BerlinClock::emptyClock();
-        $expected[3][0]="J";
-        $expected[4][0]="J";
-        $expected[4][1]="J";
+        $expected[3][0]="Y";
+        $expected[4][0]="Y";
+        $expected[4][1]="Y";
 
         $actual = $this->berlinClock->convert(0, 7, 0);
 
@@ -88,11 +88,11 @@ class BerlinClockTest extends TestCase {
 
     public function test_convert_given00H09M00S_shouldReturnFirstFiveMinutesAndAllSingleMinuteLightsYellow() {
         $expected = BerlinClock::emptyClock();
-        $expected[3][0]="J";
-        $expected[4][0]="J";
-        $expected[4][1]="J";
-        $expected[4][2]="J";
-        $expected[4][3]="J";
+        $expected[3][0]="Y";
+        $expected[4][0]="Y";
+        $expected[4][1]="Y";
+        $expected[4][2]="Y";
+        $expected[4][3]="Y";
 
         $actual = $this->berlinClock->convert(0,9,0);
 
@@ -101,8 +101,8 @@ class BerlinClockTest extends TestCase {
 
     public function test_convert_given00H10M00S_shouldReturn1And2FiveMinutesLightsYellow() {
         $expected = BerlinClock::emptyClock();
-        $expected[3][0]="J";
-        $expected[3][1]="J";
+        $expected[3][0]="Y";
+        $expected[3][1]="Y";
 
         $actual = $this->berlinClock->convert(0,10,0);
 
@@ -111,9 +111,9 @@ class BerlinClockTest extends TestCase {
 
     public function test_convert_given00H11M00S_shouldReturn1And2FiveMinutesAndFirstSingleMinuteLightsYellow() {
         $expected = BerlinClock::emptyClock();
-        $expected[3][0]="J";
-        $expected[3][1]="J";
-        $expected[4][0]="J";
+        $expected[3][0]="Y";
+        $expected[3][1]="Y";
+        $expected[4][0]="Y";
 
         $actual = $this->berlinClock->convert(0,11,0);
 
@@ -122,8 +122,8 @@ class BerlinClockTest extends TestCase {
 
     public function test_convert_given00H15M00S_shouldReturn1And2FiveMinutesLightsYellowAnd3FiveMinutesLightsRed(){
         $expected = BerlinClock::emptyClock();
-        $expected[3][0]="J";
-        $expected[3][1]="J";
+        $expected[3][0]="Y";
+        $expected[3][1]="Y";
         $expected[3][2]="R";
 
         $actual = $this->berlinClock->convert(0,15,0);
