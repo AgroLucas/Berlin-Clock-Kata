@@ -29,7 +29,7 @@ class BerlinClock {
 
     private function modifyFiveMinutes(int $minutes, array $clock): array {
         for ($i = 5; $i <= $minutes; $i += 5) {
-            if ($i === 15) {
+            if ($i === 15 || $i===30) {
                 $clock[3][($i / 5) - 1] = "R";
             } else {
                 $clock[3][($i / 5) - 1] = "Y";
