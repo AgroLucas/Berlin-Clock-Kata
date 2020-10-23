@@ -7,7 +7,12 @@ class BerlinClock {
         $res = self::emptyClock();
         if ($minutes>=5) {
             $res[3][0] = "J";
-            $res=$this->modifySingleMinutes($res, $minutes-5);
+            if($minutes === 10){
+                $res[3][1]="J";
+            }else{
+                $res=$this->modifySingleMinutes($res, $minutes-5);
+            }
+
         }else{
             $res = $this->modifySingleMinutes($res, $minutes);
         }
