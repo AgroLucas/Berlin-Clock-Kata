@@ -142,4 +142,16 @@ class BerlinClockTest extends TestCase {
 
         $this->assertEquals($expected, $actual);
     }
+
+    public function test_convert_given00H20M00S_shouldReturn1And2And4FiveMinutesLightsYellowAnd3FiveMinutesLightRed() {
+        $expected = BerlinClock::emptyClock();
+        $expected[3][0]="Y";
+        $expected[3][1]="Y";
+        $expected[3][2]="R";
+        $expected[3][3]="Y";
+
+        $actual = $this->berlinClock->convert(0, 20, 0);
+
+        $this->assertEquals($expected, $actual);
+    }
 }
