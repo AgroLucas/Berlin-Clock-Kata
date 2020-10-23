@@ -9,6 +9,9 @@ class BerlinClock {
             $res[3][0]="J";
             if($minutes===6) {
                 $res[4][0]="J";
+            } elseif ($minutes===7) {
+                $res[4][0]="J";
+                $res[4][1]="J";
             }
         }else{
             $res = $this->modifySingleMinutes($res, $minutes);
