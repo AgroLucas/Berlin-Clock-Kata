@@ -5,14 +5,8 @@ class BerlinClock {
 
     public function convert(int $hours, int $minutes, int $seconds):array {
         $res = self::emptyClock();
-        if($hours > 0) {
-            $res[2][0]="R";
-            if($hours > 1){
-                $res[2][1]="R";
-                if ($hours === 3) {
-                    $res[2][2] = "R";
-                }
-            }
+        for ($i = 0; $i < $hours; $i++) {
+            $res[2][$i]="R";
         }
         $res = $this->modifyFiveMinutes($res, $minutes);
         $res=$this->modifySingleMinutes($res, $minutes%5);
