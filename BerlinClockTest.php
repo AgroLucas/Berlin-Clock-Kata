@@ -341,4 +341,12 @@ class BerlinClockTest extends TestCase {
 
         $this->assertEquals($expected, $actual);
     }
+
+    public function test_convert_given00H00M02S_shouldReturnEmptyClock() {
+        $expected = $this->emptyClock;
+
+        $actual = $this->berlinClock->convert(0,0,2);
+
+        $this->assertEquals($expected, $actual);
+    }
 }
