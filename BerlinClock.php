@@ -9,9 +9,7 @@ class BerlinClock {
         $res = $this->modifySingleHours($res, $hours%5);
         $res = $this->modifyFiveMinutes($res, $minutes);
         $res = $this->modifySingleMinutes($res, $minutes%5);
-        if($seconds%2===1){
-            $res[0][0]="R";
-        }
+        $res = $this->modifySeconds($res, $seconds);
         return $res;
     }
 
@@ -53,6 +51,13 @@ class BerlinClock {
     private function modifyFiveHours(array $clock, int $hours): array {
         for ($i = 5; $i <= $hours; $i += 5) {
             $clock[1][($i / 5) - 1] = "R";
+        }
+        return $clock;
+    }
+
+    private function modifySeconds(array $clock, int $seconds): array {
+        if ($seconds % 2 === 1) {
+            $clock[0][0] = "R";
         }
         return $clock;
     }
