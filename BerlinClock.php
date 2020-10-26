@@ -9,6 +9,9 @@ class BerlinClock {
             $res[1][0]="R";
             if ($hours > 9) {
                 $res[1][1]="R";
+                if ($hours === 15) {
+                    $res[1][2]="R";
+                }
             }
         }
         $res = $this->modifySingleHours($res, $hours%5);
