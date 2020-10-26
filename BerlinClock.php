@@ -5,9 +5,7 @@ class BerlinClock {
 
     public function convert(int $hours, int $minutes, int $seconds):array {
         $res = self::emptyClock();
-        for ($i = 0; $i < $hours; $i++) {
-            $res[2][$i]="R";
-        }
+        $res = $this->modifySingleHours($res, $hours);
         $res = $this->modifyFiveMinutes($res, $minutes);
         $res=$this->modifySingleMinutes($res, $minutes%5);
         return $res;
@@ -37,6 +35,13 @@ class BerlinClock {
             } else {
                 $clock[3][($i / 5) - 1] = "Y";
             }
+        }
+        return $clock;
+    }
+
+    private function modifySingleHours(array $clock, int $hours): array {
+        for ($i = 0; $i < $hours; $i++) {
+            $clock[2][$i] = "R";
         }
         return $clock;
     }
