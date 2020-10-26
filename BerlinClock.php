@@ -23,9 +23,16 @@ class BerlinClock {
         );
     }
 
-    private function modifySingleMinutes(array $clock, int $minutes): array {
-        for ($i = 0; $i < $minutes; $i++) {
-            $clock[4][$i] = "Y";
+    private function modifyFiveHours(array $clock, int $hours): array {
+        for ($i = 5; $i <= $hours; $i += 5) {
+            $clock[1][($i / 5) - 1] = "R";
+        }
+        return $clock;
+    }
+
+    private function modifySingleHours(array $clock, int $hours): array {
+        for ($i = 0; $i < $hours; $i++) {
+            $clock[2][$i] = "R";
         }
         return $clock;
     }
@@ -41,16 +48,9 @@ class BerlinClock {
         return $clock;
     }
 
-    private function modifySingleHours(array $clock, int $hours): array {
-        for ($i = 0; $i < $hours; $i++) {
-            $clock[2][$i] = "R";
-        }
-        return $clock;
-    }
-
-    private function modifyFiveHours(array $clock, int $hours): array {
-        for ($i = 5; $i <= $hours; $i += 5) {
-            $clock[1][($i / 5) - 1] = "R";
+    private function modifySingleMinutes(array $clock, int $minutes): array {
+        for ($i = 0; $i < $minutes; $i++) {
+            $clock[4][$i] = "Y";
         }
         return $clock;
     }
