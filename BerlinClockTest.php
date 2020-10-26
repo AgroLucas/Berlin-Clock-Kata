@@ -188,7 +188,7 @@ class BerlinClockTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
-    public function test_convert_given00H59M00S_shouldReturnAllSingleMinuteLightsAnd1And2And4And5And7And8And10And11FiveMinutesLightsYellowAnd3And6And9FiveMinutesLightsRed(){
+    public function test_convert_given00H59M00S_shouldReturnAllMinuteLightsOn(){
         $expected = $this->emptyClock;
         $expected[3][0]="Y";
         $expected[3][1]="Y";
@@ -380,7 +380,7 @@ class BerlinClockTest extends TestCase {
 
     //STEP 666 UTLIMATE TEST OF DOOM
 
-    public function test_convert_given23H59M59S_shouldReturnAllSingleMinuteLightsAnd1And2And4And5And7And8And10And11FiveMinutesLightsYellowAnd3And6And9FiveMinutesLightsAnd1To3SingleHourLightsAndAllFiveHoursLightsAndSecondsLightRed() {
+    public function test_convert_given23H59M59S_shouldReturnAllOnExceptLastSingleHourLight() {
         $expected = $this->emptyClock;
         $expected[0][0]="R";
         $expected[1][0]="R";
