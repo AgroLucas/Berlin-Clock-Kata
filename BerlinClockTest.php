@@ -410,4 +410,13 @@ class BerlinClockTest extends TestCase {
 
         $this->assertEquals($expected, $actual);
     }
+
+    public function test_convert_given25H460M4655685S_shouldReturnNULL() {
+        $expected = NULL;
+
+        $actual = $this->berlinClock->convert(25, 460, 4655685);
+
+        $this->assertEquals($expected, $actual);
+    }
+
 }

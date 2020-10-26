@@ -3,7 +3,9 @@
 
 class BerlinClock {
 
-    public function convert(int $hours, int $minutes, int $seconds):array {
+    public function convert(int $hours, int $minutes, int $seconds): ?array {
+        if (!$this->isValidTime($hours, $minutes, $seconds))
+            return NULL;
         $res = self::emptyClock();
         $res = $this->modifyFiveHours($res, $hours);
         $res = $this->modifySingleHours($res, $hours%5);
@@ -60,5 +62,15 @@ class BerlinClock {
             $clock[0][0] = "R";
         }
         return $clock;
+    }
+
+    private function isValidTime(int $hours, int $minutes, int $seconds): bool {
+        if ($hours < 0 || $hours > 23)
+            return false;
+        if ($minutes < 0 || $minutes > 59)
+            return false;
+        if ($seconds < 0 || $seconds > 59)
+            return false;
+        return true;
     }
 }
