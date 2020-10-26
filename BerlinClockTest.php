@@ -245,7 +245,7 @@ class BerlinClockTest extends TestCase {
 
     // STEP 4 -> 5HoursLights
 
-    public function test_convert_given05H00M00S_shouldReturnFirst5HoursLightRed() {
+    public function test_convert_given05H00M00S_shouldReturnFirstFiveHoursLightRed() {
         $expected = $this->emptyClock;
         $expected[1][0]="R";
 
@@ -254,7 +254,7 @@ class BerlinClockTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
-    public function test_convert_given06H00M00S_shouldReturnFirstSingleHourLightAndFirst5HoursLightsRed() {
+    public function test_convert_given06H00M00S_shouldReturnFirstSingleHourLightAndFirstFiveHoursLightRed() {
         $expected = $this->emptyClock;
         $expected[1][0]="R";
         $expected[2][0]="R";
@@ -264,7 +264,7 @@ class BerlinClockTest extends TestCase {
         $this->assertEquals($expected, $actual);
     }
 
-    public function test_convert_given07H00M00S_shouldReturn1And2SingleHourLightsAndFirst5HoursLightRed() {
+    public function test_convert_given07H00M00S_shouldReturn1And2SingleHourLightsAndFirstFiveHoursLightRed() {
         $expected = $this->emptyClock;
         $expected[1][0]="R";
         $expected[2][0]="R";

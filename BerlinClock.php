@@ -16,7 +16,7 @@ class BerlinClock {
             $res = $this->modifySingleHours($res, $hours);
         }
         $res = $this->modifyFiveMinutes($res, $minutes);
-        $res=$this->modifySingleMinutes($res, $minutes%5);
+        $res = $this->modifySingleMinutes($res, $minutes%5);
         return $res;
     }
 
