@@ -9,7 +9,11 @@ class BerlinClock {
             $res[2][0]="R";
             if($hours === 2){
                 $res[2][1]="R";
+            } elseif ($hours === 3) {
+                $res[2][1]="R";
+                $res[2][2]="R";
             }
+
         }
         $res = $this->modifyFiveMinutes($res, $minutes);
         $res=$this->modifySingleMinutes($res, $minutes%5);
