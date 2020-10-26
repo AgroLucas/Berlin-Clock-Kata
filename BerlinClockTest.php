@@ -213,7 +213,7 @@ class BerlinClockTest extends TestCase {
 
     //STEP 3
 
-    public function test_convert_given_01H00M00S_shouldReturnFirstSingleHourLightRed() {
+    public function test_convert_given01H00M00S_shouldReturnFirstSingleHourLightRed() {
         $expected = $this->emptyClock;
         $expected[2][0]="R";
 
