@@ -45,3 +45,8 @@ Exemple partie shouldReturn:
 
 Exemple de nom complet de méthode de test:
     test_convert_given00H59M00S_shouldReturnXVxxxxVxxxxVyyryyryyryyVyyyy
+
+
+-- MEMBRES DU GROUPE: --
+Lucas Agro
+Baptiste Honnay
